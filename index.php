@@ -165,7 +165,7 @@
                     <div class="tab-pane fade" id="list-float" role="tabpanel" aria-labelledby="list-float-list">Float are umbers with decimal values.<br>The Sytax is $variable_name = 3.14;<?php $pi=3.14; echo "<br>$pi <-- the value 3.14 you are seeing here is a php float variable containg decimal number shown here."; ?></div>
                     <div class="tab-pane fade" id="list-boolean" role="tabpanel" aria-labelledby="list-boolean-list">Bool have only two possible values either true or false.<br>The Sytax is $variable_name = true;<?php $b=true; echo "<br>$b <-- the value true you are seeing here is a php boolean variable containg boolean value shown here."; ?></div>
                     <div class="tab-pane fade" id="list-object" role="tabpanel" aria-labelledby="list-object-list">Objects are instances of programmer-defined classes, which can package up both other kinds of values and functions that are specific to the class.<br>Objects will be discussed seprately over here.</div>
-                    <div class="tab-pane fade" id="list-array" role="tabpanel" aria-labelledby="list-array-list">Arrays are named and indexed collections of other values.<br>The indexing of array starts from 0, i.e. if the array has 6 characters than it will have index from 0 to 5. For array of length 'n' the indexing is from 0 to n-1.<br>The Sytax is $variable_name = ("aman","shreya","Hritika",<br>"arnav","kritika","Keshav");<?php $names = array("aman","shreya","Hritika","arnav","kritika","Keshav"); echo "<br>$names[0], $names[1], $names[2], $names[3], $names[4], $names[5]<-- all the names you are seeing here is a php array variable of string type containg names shown here."; ?></div>
+                    <div class="tab-pane fade" id="list-array" role="tabpanel" aria-labelledby="list-array-list">Arrays are named and indexed collections of other values.<br>The indexing of array starts from 0, i.e. if the array has 6 characters than it will have index from 0 to 5. For array of length 'n' the indexing is from 0 to n-1.<br>The Sytax is $variable_name = ("aman","shreya","Hritika",<br>"arnav","kritika","Keshav");<?php $names = array("aman","shreya","Hritika","arnav","kritika","Keshav"); echo "<br>$names[0], $names[1], $names[2], $names[3], $names[4], $names[5]<-- all the names you are seeing here is a php array variable of string type containg names shown here. They are also reffered as Indexed arrays."; ?></div>
                     <div class="tab-pane fade" id="list-null" role="tabpanel" aria-labelledby="list-null-list">NULL is a special type that only has one value: NULL.</div>
                 </div>
             </div>
@@ -578,7 +578,7 @@
     
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
         <strong>The Website is made using HTML, Bootstrap and PHP,</strong> and is only for educational purpose.<br>
-        <b><?php       echo "<br>This Webpage is being developed by Aman Kumar Dewangan using PHP.";    ?><b>
+        <b><?php       echo "<br>This Webpage is being developed by Aman Kumar Dewangan using PHP."; echo "Date: ".date("dS F Y");   ?><b>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         <span aria-hidden="true">&times;</span>
     </div>
