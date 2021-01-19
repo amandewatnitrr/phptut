@@ -138,7 +138,7 @@ $student = array(17,19,20,19,20);
                 <hr>
                       Output: <br>
                       <?php 
-                          function average ($a)
+                          function average($a)
                             {
                                 $sum = 0;
                                 $k = 0;
@@ -193,6 +193,225 @@ echo "Aman references to ".$arr["Aman"];
                   <hr>
                   Associative arrays are used to associate a value at particular index of array to it's specific key. The key itself acts as an index for the reference value. This will be more 
                   clear through above example.<br>
+        </div>
+        <br>
+        
+        <div class="list-group-item list-group-item-info">
+                  <h3 class="my-3">Multi-dimensional Arrays in PHP</h3><b>
+        <?php $code='
+<?php
+
+$arr=array(array(1,2,3,4),array(5,6,7,8),array(8,10,11,12));
+echo "Elements in array are: <br>";
+for($i=0;$i<count($arr);$i++)
+      {
+            echo var_dump($arr[$i])." ";
+      }
+
+?>
+        '; highlight_string($code); ?></b>
+                  <hr>
+                  Output:<br>
+                  <?php
+
+                      $arr=array(array(1,2,3,4),array(5,6,7,8),array(8,10,11,12));
+                      echo "Elements in array are: <br>";
+                      for($i=0;$i<count($arr);$i++)
+                            {
+                                  echo var_dump($arr[$i])." ";
+                            }
+                    
+                  ?>
+                  <hr>
+                  Multidimensional Arrays are just as similar to 2D Matrices. If we have a 2D array it has indexing from 0 to r-1 row and column has indexing from 0 to c-1 column.<br>
+                  <div class="list-group-item list-group-item-danger">(click on the button to view another example.)
+                  <hr>
+                  <button type="button" style="margin: 5px;" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2d">Example</button>
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal2d" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Traversing 2D Array</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                      <b>Code:<br><?php $code = '
+<?php
+
+$arr=array(array(1,2,3,4),array(5,6,7,8),array(8,10,11,12));
+echo "Elements in array are: <br>";
+for($i=0;$i<count($arr);$i++)
+      {
+            for($j=0;$j<count($arr[$i]);$j++)
+                {echo $arr[$i][$j]." ";}
+                echo "<br>";
+      }
+
+?>';highlight_string($code);?></b><br>
+                <hr>
+                      Output: <br>
+                      <?php
+
+                      $arr=array(array(1,2,3,4),array(5,6,7,8),array(8,10,11,12));
+                      echo "Elements in array are: <br>";
+                      for($i=0;$i<count($arr);$i++)
+                            {
+                                  for($j=0;$j<count($arr[$i]);$j++)
+                                      {echo $arr[$i][$j]." ";}
+                                      echo "<br>";
+                            }
+                    
+                      ?>
+                      <hr>Here, as you can see the concept of Associative array gets used, as you can see that the $arr[$i] acts as a column reference for the values in the column.
+                      </div>
+                      <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                      </div>
+                  </div>
+                  </div>
+                  </div><br>
+
+
+                  <div class="list-group-item list-group-item-danger"><b>In PHP, the concept of global and local variable is a bit different here, whatever you declare in the
+                  global scope(for raw understanding: say it free space) is part of outside scope and whatever is inside function(assume it as a closed system) will remain within the
+                  function only. Whatever is inside function can't go outside and what's outside cannot come inside unless and untill passed as a parameter to the function
+                  calling it directly. But, we can acces the global variable using keyword global, not only access but manipulate as well. This will become more clear with the below example.</b>
+                  <hr>
+
+                  <div class="list-group-item list-group-item-danger shadow-lg p-3 mb-5 bg-white rounded">
+                  <b>Code:<br><?php $code = '
+<?php 
+$globe = 100;
+function show1()
+    {$globe =10; echo "Local = ".$globe."<br>";}
+function show2()
+    {global $globe; echo "Global = ".$globe."<br>";}
+show1();
+show2();
+?>';highlight_string($code);?></b><hr>
+                  Output:
+                  <?php 
+                      $globe = 100;
+                      function show1()
+                          {$globe =10; echo "Local = ".$globe."<br>";}
+                      function show2()
+                          {global $globe; echo "Global = ".$globe."<br>";}
+                      show1();
+                      show2();
+                  ?>
+                  </div>
+
+
+                  </div><br>
+
+
+                  <div class="list-group-item list-group-item-warning shadow-lg p-3 mb-5 bg-white rounded">
+  
+                  <form action="/php102.php" method="POST">
+                    <div class="mb-3 my-3">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+                      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="name" class="form-label">Name</label>
+                      <input type="name" class="form-control" id="name" name="name">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form><br>
+                  <?php 
+                      /*
+                      if($_SERVER['REQUEST_METHOD'] == 'POST')
+                            {
+                                $email = $_POST['email'];
+                                $name = $_POST['name'];
+                                echo '<br>Message:<br><div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Form Submitted!</strong> Thank you for checking in the website.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                </div>';
+                                echo "<hr>";
+                            }*/
+                  
+                  ?>
+                  <div class="list-group-item list-group-item-info">
+                  <b>Code:<br><?php $code = '
+<?php 
+                      
+if($_SERVER["REQUEST_METHOD"] == "POST")
+      {
+          $email = $_POST["email"];
+          $name = $_POST["name"];
+          echo "<br>Message:<br><div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Form Submitted!</strong> Thank you for checking in the website.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>";
+      }
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                  Please, first fill the form and read the text further....[Alert!!! This is a dummy form.]. You got the Pop-up because you filled the form, a simple
+                  example of PHP.<br>
+                  So, the point is you might have first thought that a form over here doesn't make sense, yeah!! you are right but I am not making a commercial
+                  or some other website, I am working on a website that teaches PHP, so here we are going to integrate database to this form now. Basically, there are 2 ways
+                  in which we can perform this task. <br>
+                  <ol>
+                        <li>MY SQLi Extension: Works only with MySQL Database System. It's usage can be categorised further into 2 methods.</li>
+                            <ul>
+                                <li>Prcedural: Use of functions</li>
+                                <li>Object Oriented Use: Use of Classes and Object</li>
+                            </ul>
+                        <li>PDO: Works with a wide-variety of database systems</li>
+                  </ol>
+                  <br>
+                  <div class="list-group-item list-group-item-info">
+                  <b>Code:<br><?php $code = '
+<?php 
+# denotes comment in php
+$servername = "servername"; #-->localhost<-- for you guys
+$username = "username"; #-->root<-- for you guys
+$password = "password"; #--><-- theres no password guys for you
+
+$conn = mysqli_connect($servername,$username,$password);
+if(!$conn){echo "Connection, Not Successfull!!!<br>";}
+else {echo "Connection, Successfull!!!";}
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                  Connecting to the Server:<br>
+                  <?php 
+                      $servername = "localhost";
+                      $username = "root";
+                      $password = "";
+
+                      $conn = mysqli_connect($servername,$username,$password);
+                      if(!$conn){die("Connection, Not Successfull!!! ".mysqli_connect_error()."<br>");}
+                      else {echo "Connection, Successfull!!!";}
+                  ?>
+                  <br><br>
+                  <h4>Using PHP to exectue SQL commands</h4><br>
+                  Now, once we are connected to the host we can now connect to the database and execute sql statements. A connection 
+                  to the localhost is nessecary for you guys to perform this. We can do this as follows:<br>
+                  <div class="list-group-item list-group-item-info">
+                  <b>Code:<br><?php $code = '
+<?php 
+$sql = "create database any_name";
+$result = mysqli_query($sql);
+if(!$result)
+  {
+    echo "The database didnt get created, the fact is ".$result.", "." due to ".mysqli_error()."<br>";
+  }
+else { echo "The database has been created, the fact is ".$result.".<br>"; }
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                  Output:<br>Cannot show, you will have to test it on your own due to stability issues.<br>
+                  
+                  </div>                  
+
+
         </div>
         <br>
 
