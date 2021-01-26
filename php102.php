@@ -5,70 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   
-    <title>Practicing PHP</title>
+    <title>PHP 102</title>
 </head>
 <body style="overflow-x: hidden;">
 
 <!--Navigation Bar begins-->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky" style="width: 100%;">
-  
-  <div class="container-fluid">
-    <a class="navbar-brand" target="_blank" href="https://www.linkedin.com/in/aman-kumar-dewangan-akd13o1/">PHP by AkD<span class="badge bg-warning text-dark rounded-pill">2021</span></h1> ||</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="./index.php"><button type="button" class="btn btn-primary" style="margin-left: 10px;"><img src="./images/home.svg" style="margin: 2pt;" class="img-fluid">Home</button></a>
-        </li>
-
-        <li class="nav-item">
-        <a class="nav-link" href="https://calendar.google.com/calendar/u/0/r?tab=wc"><button type="button" class="btn btn-light" style="margin-left: 10px;">Link</button></a>
-        </li>
-        
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <button type="button" class="btn btn-danger" style="margin-left: 10px;">Lessons</button>
-        </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="./php102.php">PHP 102</a></li>
-            <li><a class="dropdown-item" href="#">PHP 103</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <button type="button" class="btn btn-warning" style="margin-left: 10px;">Social Media/Coding Platform</button>
-        </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="https://www.linkedin.com/in/aman-kumar-dewangan-akd13o1/"><img src="./images/linkedin.svg" style="margin: 2pt;" class="img-fluid">Linkedin</a></li>
-            <li><a class="dropdown-item" href="https://www.instagram.com/akd_beast_slayer/"><img src="./images/instagram.svg" style="margin: 2pt;" class="img-fluid">Instagram</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="https://github.com/amandewatnitrr"><img src="./images/github.svg" style="margin: 2pt;" class="img-fluid">Github</a></li>
-            <li><a class="dropdown-item" href="https://www.hackerrank.com/amandewatnitrr?hr_r=1"><img src="./images/code.svg" style="margin: 2pt;" class="img-fluid">Hackerrank</a></li>
-            <li><a class="dropdown-item" href="https://www.codechef.com/users/amandewatnitrr"><img src="./images/code.svg" style="margin: 2pt;" class="img-fluid">Codechef</a></li>
-          </ul>
-        </li>
-
-        
-
-      </ul>
-      <form class="searchform d-flex" action="https://www.google.com/search" method="get" name="searchform" target="_blank" type="search" id="searchinput">
-        <input name="sitesearch" type="hidden" class="form-control me-2" placeholder="Search" aria-label="Search">
-        <input autocomplete="on" class="form-control search" name="q" placeholder="Search in example.com" required="required"  type="text">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+<?php require 'navbar.php' ?>
 <!--Navigation Bar Ends-->
 <br><br>
     <div class="container">
+    <div class="list-group-item list-group-item-danger"><b>Because of some of the elements on second page, 2nd page has turned quite unresponsive and 
+    I am working on it, in case if you want to visit other pages and navigation bar doesnt open than, click back on --&lt;PHP by AkD&gt;-- written on nav bar and you will be again able to move between pages via nav-bar.</b></div><br>
                   <div class="list-group-item list-group-item-warning">
                   <h3 class="my-3">Functions in PHP</h3><b>
         <?php $code='
@@ -324,7 +271,7 @@ show2();
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form><br>
                   <?php 
-                      /*
+                      
                       if($_SERVER['REQUEST_METHOD'] == 'POST')
                             {
                                 $email = $_POST['email'];
@@ -334,7 +281,7 @@ show2();
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>';
                                 echo "<hr>";
-                            }*/
+                            }
                   
                   ?>
                   <div class="list-group-item list-group-item-info">
@@ -387,8 +334,8 @@ else {echo "Connection, Successfull!!!";}
                       $password = "";
 
                       $conn = mysqli_connect($servername,$username,$password);
-                      if(!$conn){die("Connection, Not Successfull!!! ".mysqli_connect_error()."<br>");}
-                      else {echo "Connection, Successfull!!!";}
+                      if($conn){echo "Connection, Successfull!!!";}
+                      else {echo "Connection, Not Successfull(It's programmed for Localhost)!!! ".mysqli_connect_error()."<br>";}
                   ?>
                   <br><br>
                   <h4>Using PHP to exectue SQL commands</h4><br>
@@ -397,19 +344,196 @@ else {echo "Connection, Successfull!!!";}
                   <div class="list-group-item list-group-item-info">
                   <b>Code:<br><?php $code = '
 <?php 
-$sql = "create database any_name";
-$result = mysqli_query($sql);
+$sql = "CREATE DATABASE any_name";
+$result = mysqli_query($conn,$sql);
 if(!$result)
   {
-    echo "The database didnt get created, the fact is ".$result.", "." due to ".mysqli_error()."<br>";
+    echo "The database didnt get created, the fact is ".$result.", "." due to ".mysqli_error($result)."<br>";
   }
 else { echo "The database has been created, the fact is ".$result.".<br>"; }
 
 ?>';highlight_string($code);?></b><hr>
                   </div>
-                  Output:<br>Cannot show, you will have to test it on your own due to stability issues.<br>
+                  Output:<br>Cannot show, you will have to test it on your own due to stability issues. This must return 1(true when working on Localhost), i.e. the database is created.<br>
                   
                   </div>                  
+
+                  <h3>Creating table using SQL in PHP</h3>
+                  <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded">
+                  <div class="list-group-item list-group-item-primary">
+                  <b>Code:<br><?php $code = '
+<?php 
+# denotes comment in php
+$servername = "servername"; #-->localhost<-- for you guys
+$username = "username"; #-->root<-- for you guys
+$password = "password"; #--><-- theres no password guys for you
+$database = "databasename"; #-->Any database you have made<--
+
+$conn = mysqli_connect($servername,$username,$password,$database);
+#specifying database connects your page to that particular database only.
+if(!$conn){echo "Connection, Not Successfull!!!<br>";}
+else {echo "Connection, Successfull!!!";}
+$sql = "CREATE TABLE "trip" ("sno" INT(6) NOT NULL AUTO_INCREMENT PRIMARY,"name" VARCHAR(12) NOT NULL, "dest" VARCHAR(6) NOT NULL);
+$result = mysqli_query($conn,$sql);
+if(!$result)
+  {
+    echo "The table didnt get created, the fact is ".$result.", "." due to ".mysqli_error($result)."<br>";
+  }
+else { echo "The table has been created, the fact is ".$result.".<br>"; }
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                      So, basically what we did here is we got connection to the database and within
+                      the database using sql in php we created a table. Such commands have not been executed because 
+                      mysqli_error() function causes the program execution to get terminated there itself, hindering
+                      the proper working of website.
+                  </div>
+
+
+                  <h3>Inserting values in table using SQL in PHP</h3>
+                  <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded">
+                  <div class="list-group-item list-group-item-primary">
+                  <b>Code:<br><?php $code = '
+<?php 
+# denotes comment in php
+$servername = "servername"; #-->localhost<-- for you guys
+$username = "username"; #-->root<-- for you guys
+$password = "password"; #--><-- theres no password guys for you
+$database = "databasename"; #-->Any database you have made<--
+
+$conn = mysqli_connect($servername,$username,$password,$database);
+#specifying database connects your page to that particular database only.
+if(!$conn){echo "Connection, Not Successfull!!!<br>";}
+else {echo "Connection, Successfull!!!";}
+$sql = "INSERT INTO "trip" ("name","dest") VALUES ("Rohan","Wuhan")";
+$result = mysqli_query($conn,$sql);
+if(!$result)
+  {
+    echo "The value in table didnt get inserted, the fact is ".$result.", "." due to ".mysqli_error($result)."<br>";
+  }
+else { echo "The value in table has been inserted, the fact is ".$result.".<br>"; }
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                      So, basically what we did here is we got connection to the database and within
+                      the database using sql in php we created a table, and now we are inserting data into it. Such commands have not been executed because 
+                      mysqli_error() function causes the program execution to get terminated there itself, hindering
+                      the proper working of website.
+                  </div>
+
+
+                  <h3>Connecting Form to Backend</h3>
+                  <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded">
+                  <div class="list-group-item list-group-item-primary">
+                  <b>Code:<br><?php $code = '
+<?php 
+# denotes comment in php
+$servername = "servername"; #-->localhost<-- for you guys
+$username = "username"; #-->root<-- for you guys
+$password = "password"; #--><-- theres no password guys for you
+$database = "databasename"; #-->Any database you have made<--
+$conn = mysqli_connect($servername,$username,$password,$database);
+
+#specifying database connects your page to that particular database only.
+if(!$conn){echo "Connection, Not Successfull!!!<br>";}
+else {echo "Connection, Successfull!!!";}
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+      {
+          $var1 = $_POST["field1"];
+          $var2 = $_POST["field2"];
+          echo "<br>Message:<br><div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>Form Submitted!</strong> Thank you for checking in the website.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>";
+      }
+
+$sql = "INSERT INTO "tablename" ("field1","field2") VALUES ($var1,$var2)";
+$result = mysqli_query($conn,$sql);
+
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                      So, now it's clear that in the localhost how, data gets stored in the SQL Database using POST method in PHP. Previously, we
+                      only designed the PHP only to show pop-up but now once we have known how we can record that data and connect to database we can easily add
+                      it to database.
+                  </div>
+
+
+                  <h3>Fetching Data from Backend using PHP in MySQL</h3>
+                  <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded">
+                  <div class="list-group-item list-group-item-primary">
+                  <b>Code:<br><?php $code = '
+<?php 
+# denotes comment in php
+$servername = "servername"; #-->localhost<-- for you guys
+$username = "username"; #-->root<-- for you guys
+$password = "password"; #--><-- theres no password guys for you
+$database = "databasename"; #-->Any database you have made<--
+$conn = mysqli_connect($servername,$username,$password,$database);
+
+#specifying database connects your page to that particular database only.
+if(!$conn){echo "Connection, Not Successfull!!!<br>";}
+else {echo "Connection, Successfull!!!";}
+
+$sql = "SELECT * FROM "tablename"";
+$result = mysqli_query($conn,$sql);
+$num = mysqli_num_rows($result); #Counts the total no. of rows in dataset
+echo "No. of entries --> ".$num."<br>";
+
+echo "The records in dataset are as follows:";
+while($row = mysqli_fetch_assoc($result))
+      {
+          echo $row["sno"]." ".$row["field1"]." ".$row["field2"]."<br>";
+      }
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                      Now, here we can extract the data from database using the command mysqli_fetch_assoc(), this command sequentially moves to the next record in the table,
+                      It's just like an iterator, that keeps on moving to the next record as long as the EOF(End of File) is reached.
+                  </div>
+
+
+                  <h3>Updating values via MySQLi in PHP</h3>
+                  <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded">
+                  <div class="list-group-item list-group-item-primary">
+                  <b>Code:<br><?php $code = '
+<?php 
+
+  $sql = "UPDATE "tablename" SET "field1" = "value1" WHERE "field2" = "value2" ";
+  $result = mysqli_query($conn,$sql);
+  echo "Record updated too ".var_dump($result)."<br>";
+  $aff = mysqli_affected_rows($conn);
+  echo "No. of rows affected = ".$aff."<br>";
+  if($result)
+        {echo "Record Updated Succesfully!!";}
+  else  {echo "Record Updation Failed!!!";}
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                      Update query of SQL allows you to update the records in dataset, for this we just need to know
+                      the proper filtering so that we can get only those records where the values actually need to be updated.
+                  </div>
+
+                  <h3>Deleting records from table via  SQL query in PHP</h3>
+                  <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded">
+                  <div class="list-group-item list-group-item-primary">
+                  <b>Code:<br><?php $code = '
+<?php 
+
+  $sql = "DELETE FROM "tablename" WHERE "field1" = "value1"";
+  $result = mysqli_query($conn,$sql);
+  $aff = mysqli_affected_rows($conn);
+  echo "No. of rows affected = ".$aff."<br>";
+  if($result)
+        {echo "Record Deletion Succesfull!!";}
+  else  {echo "Record Deletion Failed!!!";}
+
+?>';highlight_string($code);?></b><hr>
+                  </div>
+                      Delete query of SQL allows you to delete the records from dataset, for this we just need to know
+                      the proper filtering so that we only those records which we want to delete.
+                  </div>
 
 
         </div>

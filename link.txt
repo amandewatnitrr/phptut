@@ -1,0 +1,32 @@
+<meta name="google-site-verification" content="Dyivp13NXmmNjAtQSBkjcaNuAK-7y5CHHBTrDl-TuNA" />
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="483362517964-fle8m9lubucr4o7fbkejtde77ncmv79n.apps.googleusercontent.com">
+
+#button Sign in
+
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+# Signin function
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+#Signout a user
+
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+
+OAuth Client ID: 483362517964-fle8m9lubucr4o7fbkejtde77ncmv79n.apps.googleusercontent.com
+OAuth Client Secret: glMLS2ViV-ImM9b0wp9Be9IY
