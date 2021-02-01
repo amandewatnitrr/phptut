@@ -21,6 +21,39 @@
 <!--Navigation Bar begins-->
 <?php require 'navbar.php' ?>
 <!--Navigation Bar Ends-->
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/oskar-yildiz-cOkpTiJMGzA-unsplash.jpg" height="auto" class="d-block w-100 img-fluid" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 style="color:yellow;">Welcome to PHP Tutorial by AkD</h1>
+        <h3 style="color:yellow;">In case, you find some issues on the website.<br>Mail at "amandewatnitrr@gmail.com"</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/pankaj-patel-Fi-GJaLRGKc-unsplash.jpg" height="auto" class="d-block w-100 img-fluid" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 style="color:white;">The Website is also Open for Contributions.</h1>
+        <h3 style="color:white;">Feel free to make commits to make it better for others.</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./images/jefferson-santos-9SoCnyQmkzI-unsplash.jpg" height="auto" class="d-block w-100 img-fluid" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h1 style="color:white;">Also, if you are a Tech Enthusiast</h1>
+        <h3 style="color:white;">Do follow me on <br>Instagram(@akd_beast_slayer) and Linkedin(Aman Kumar Dewangan)</h3>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
 <br><br>
     <div class="container">
     

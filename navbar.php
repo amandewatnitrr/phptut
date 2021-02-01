@@ -15,7 +15,7 @@
         </li>
 
         <li class="nav-item">
-        <a class="nav-link" href="#"><button type="button" class="btn btn-light" style="margin-left: 10px;">Link</button></a>
+        <a class="nav-link" href="https://codewithharry.com/"><button type="button" class="btn btn-light" style="margin-left: 10px;">Code with Harry</button></a>
         </li>
 
         <li class="nav-item dropdown">

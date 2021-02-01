@@ -257,12 +257,52 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
         '; highlight_string($code); ?></b></div>
+
+<h2>Setting up Logout</h2>
+    <b><div class="list-group-item list-group-item-light my-3"><?php $code='
+<?php
+
+session_start();
+
+session_unset();
+session_destroy();
+
+header("location: login.php");
+
+#Add this php to the logout.php and dont forget to provide a link for logout. DIY
+
+?>
+        '; highlight_string($code); ?></b></div>
     </div>
         
-    
+    <h2>Password Hashing</h2>
+    <div class="list-group-item list-group-item-primary shadow-lg p-3 mb-5 bg-white rounded"><b>
+        Hashing is process of converting a given key into another value. A hash function is a one way mathematical function, that generates a different value from the 
+        input key. The function generates the same hash from the input given, but you can never extract the input key from the hash itself, hence a one way function. Even if
+        you hash the hash itself, it would not return you the input, but a hash of the hash. It is used to map a given value with particular key for faster access of elements.<br>
+        <ul class="list-group-item my-3">
+            <li class="list-group-item list-group-item-danger list-group-item-action">Solves the problem of needing to efficiently find or store an item in a collection.</li>
+            <li class="list-group-item list-group-item-warning list-group-item-action">Stores data in forms of key and value pairs.</li>
+            <li class="list-group-item list-group-item-success list-group-item-action">Generate an index, at which value is stored.</li>
+            <li class="list-group-item list-group-item-primary list-group-item-action"">Make things more efficient by effectively narrowing down the search at outset.</li>
+        </ul>
+        <br> Hashing ensures a extra-security protection that ensures users that there credentials are safe. As, told it stores data in form of key and value pairs. The key which
+        is identified as data is given as input to the function, the hash code which is an integer is than mapped to fixed size we have.
+        <p>Hash Table supports 3 functions:
+        <ol><li>Insert</li><li>Get</li><li>Delete</li></ol></p>
+        <p>In place of password store, password hash, you can obtain the hash of your pasword using th functuion pssword_hash($password, PASSWORD_DEFAULT), this will return
+        the hash key for password and that will be stored in database.</p>
+        <p>What actually password_verify($input,$hash) does is, it compares the hash of the $input given with the $hash and returns boolean value.</p>
+        <hr>
+        Password Hash:<a href="https://www.php.net/manual/en/function.password-hash.php"<button type="button" class="btn btn-danger" style="margin-left: 10px;">Documentation</button></a>
+        Password Verify:<a href="https://www.php.net/manual/en/function.password-verify.php"<button type="button" class="btn btn-primary" style="margin-left: 10px;">Documentation</button></a>
+        </b>
+    </div>
+
+
     <br>
     <div class="list-group-item list-group-item-success">
-        <h3>"You have made till here, for the next chapter follow this link --&gt; <a style="text-decoration: none;" href="./php102.php">PHP 102</a> "</h3>
+        <h3>"You have made till here, for the next chapter follow this link --&gt; <a style="text-decoration: none;" href="./php105.php">PHP 105</a> "</h3>
     </div>
 
     </div>
