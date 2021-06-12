@@ -13,6 +13,9 @@
             overflow: visible;
             margin-top: -6px;
         }
+        /* https://github.com/lonekorean/gist-syntax-themes */
+        @import url('https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/one-dark.css');
+
     </style>
     <title>PHP by AkD(2021)</title>
 </head>
