@@ -15,7 +15,7 @@
         </li>
 
         <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="./about_me.php"><button type="button" class="btn btn-info" style="margin-left: 10px;"><img src="./images/avva.png" style="margin: 2pt; width:15%" class="img-fluid">About Me</button></a>
+        <a class="nav-link active" aria-current="page" href="./about_me.php"><button type="button" class="btn btn-success" style="margin-left: 10px;"><img src="./images/avva.png" style="margin: 2pt; width:15%" class="img-fluid">About Me</button></a>
         </li>
 
         <li class="nav-item">
